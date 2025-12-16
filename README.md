@@ -4,6 +4,6 @@
 # eg:
 # {
 #   "id": 1,
-#   "title": "Learn Flask
+#   "title": "Learn Flask"
 #   "completed": False
 # }
