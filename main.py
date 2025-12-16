@@ -19,3 +19,5 @@ def get_todo(todo_id):
     for todo in todos:
         if todo["id"] ==todo_id:
             return jsonify(todo), 200
+    # if todo is not found, return 404
+    abort(404, description="Todo not found")
