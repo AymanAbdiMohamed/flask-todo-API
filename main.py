@@ -51,3 +51,16 @@ def update_todo(todo_id):
             todo["completed"] = request.json.get("completed", todo["completed"])
             return jsonify(todo), 200
     abort(404, description="Todo not found")
+
+
+# DELETE /todos/<id> and DELETE a todo
+@app.route("/todos/<int:todo_id>", methods=["DELETE"])
+def delete_todo(todo_id):
+    for todo in todos:
+        if todo["id"] == todo_id:
+            todos.remove(todo)
+            return jsonify({"result": True}), 200
+    abort(404, description="Todo not found")
+# Run the Flask app
+if __name__ == "__main__":
+    app.run(debug=True)
